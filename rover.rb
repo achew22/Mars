@@ -34,18 +34,20 @@ class Rover
     end
   end
 
-  private
-
   def compass_points
     [ 'N', 'E', 'S', 'W' ]
   end
 
   def move
+    puts "#{self.direction}, x = #{self.x}, y = #{self.y}"
     if self.direction == 'N'
       self.y += 1
     elsif self.direction == 'E'
       self.x += 1
+    elsif self.direction == 'W'
+      self.x -= 1
     else
+      self.y -= 1
     end
   end
 
