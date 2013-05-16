@@ -39,7 +39,6 @@ class Rover
   end
 
   def move
-    puts "#{self.direction}, x = #{self.x}, y = #{self.y}"
     if self.direction == 'N'
       self.y += 1
     elsif self.direction == 'E'
@@ -58,6 +57,8 @@ class Rover
 
   def turnRight
     index = compass_points.index(self.direction)
+    index == nil ? index = 0 : index
+    puts "this is the #{index}"
     self.direction = compass_points[index + 1]
   end
 end 

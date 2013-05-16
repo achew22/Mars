@@ -61,12 +61,32 @@ describe Rover do
         expect(rover.position).to eq [1, 0]
       end
 
-      it "returns the rover's final position when turning left" do 
+      xit "returns the rover's final position" do 
         rover.x = 1
-        rover.y = 1
-        rover.evaluate('LM')
-        expect(rover.position).to eq [0, 1]
+        rover.y = 2
+        rover.evaluate('LMLMLMLMM')
+        expect(rover.position).to eq [1, 3]
+        expect(rover.direction).to eq 'N'
+      end
+
+      it "returns the rover's position when starting from another direction" do 
+        rover = Rover.new(3, 3, 'E')
+        rover.evaluate('MMRMMRMRRM')
+        expect(rover.position).to eq [5, 1]
+        expect(rover.direction).to eq 'E'
       end
     end
   end
 end
+
+
+# Test Input:
+# 5 5
+# 1 2 N
+# LMLMLMLMM
+# 3 3 E
+# MMRMMRMRRM
+ 
+# Expected Output:
+# 1 3 N
+# 5 1 E
