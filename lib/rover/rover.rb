@@ -1,21 +1,3 @@
-class CreateWorld
-  def intialize(grid, robot)
-    @grid = Grid.new(length, width)
-    @robot = Robot.new(x, y, direction)
-  end
-end
-
-class Grid
-
-  attr_reader :length, :width
-
-  def initialize(length, width)
-    @length = length
-    @width = width
-  end
-end 
-
-
 class Rover
   attr_accessor :x, :y, :direction
 
