@@ -50,10 +50,6 @@ class Rover
 
   def turn_right
     index = compass_points.index(self.direction)
-    # index == nil ? index = 0 : index
-    #make sure it never gets into an invalid direction
-
-    #look at modulo the size of the array
     self.direction = compass_points[ (index + 1) % 4]
   end
 end 
