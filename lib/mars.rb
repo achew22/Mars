@@ -1,3 +1,5 @@
 require 'rover/rover'
 require 'rover/parser'
 require 'rover/grid'
+require 'rover/runner'
+require 'rover/parser'

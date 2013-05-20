@@ -8,7 +8,3 @@ require 'mars'
 RSpec::Core::RakeTask.new(:spec) 
  
 task :default  => :spec
-
-task :import, [:file] do |f|
-  Parser.generate(:file) 
-end

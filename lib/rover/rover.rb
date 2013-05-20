@@ -17,7 +17,7 @@ class Rover
   #make a runner class that takes in file, sends to parser, and then sends instructions to rover.
 
   def evaluate(instructions)
-    instructions.split("").each do |c|
+    instructions.each do |c|
       case c
       when 'M' then move
       when 'L' then turn_left
@@ -26,6 +26,8 @@ class Rover
       end
     end
   end
+
+  private
 
   def compass_points
     [ 'N', 'E', 'S', 'W' ]
@@ -73,5 +75,3 @@ end
   #   return @x
   # end
 
-
-#create a bin, no rb after word_sorter
