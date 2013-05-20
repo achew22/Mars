@@ -18,14 +18,6 @@ describe Rover do
 
     let(:rover) { Rover.new(0, 0, 'N') }
 
-    context "when no instructions are given" do 
-
-      it "returns the rover's original- and final- position" do 
-        rover.evaluate(" ")
-        expect(rover.position).to eq [0, 0]
-      end
-    end
-
     context "when instructions are given to move outside the grid" do
 
       xit "returns the rover's final position" do 
