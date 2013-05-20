@@ -4,5 +4,4 @@ $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'mars'
 
-
-exit Runner.new(ARGV).run
+Runner.new(ARGV).run
