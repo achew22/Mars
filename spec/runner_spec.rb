@@ -37,6 +37,15 @@ describe Runner do
 
       it "raises an exception" do 
       end
+
+      it "raises an exception" do 
+      end
+
+      it "does not pass nil instructions on to the grid" do 
+      end
+
+      it "does not pass nil instructions on to the rover" do 
+      end
     end 
   end
 end
