@@ -1,10 +1,10 @@
 class Rover
   attr_accessor :x, :y, :direction
 
-  def initialize(x, y, direction)
-    @x = x
-    @y = y
-    @direction = direction
+  def initialize(vector)
+    @x = vector.x
+    @y = vector.y
+    @direction = vector.direction
   end
 
   def position
