@@ -11,12 +11,17 @@ class Rover
     [x, y]
   end
 
+  #make the parser do this, and make it more abstract
+  #something that reads in the file, tells the parser to parse it, and takes the parsed instructions
+  #and sends to rover
+  #make a runner class that takes in file, sends to parser, and then sends instructions to rover.
+
   def evaluate(instructions)
     instructions.split("").each do |c|
       case c
       when 'M' then move
-      when 'L' then turnLeft
-      when 'R' then turnRight
+      when 'L' then turn_left
+      when 'R' then turn_right
       else 
       end
     end
@@ -38,17 +43,22 @@ class Rover
     end
   end
 
-  def turnLeft
+  def turn_left
     index = compass_points.index(self.direction)
     self.direction = compass_points[index - 1]
   end
 
-  def turnRight
+  def turn_right
     index = compass_points.index(self.direction)
-    index == nil ? index = 0 : index
-    self.direction = compass_points[index + 1]
+    # index == nil ? index = 0 : index
+    #make sure it never gets into an invalid direction
+
+    #look at modulo the size of the array
+    self.direction = compass_points[ (index + 1) % 4]
   end
 end 
+
+#allow the user to pass in instructions in a binary
 
 # init_string = gets()   # 3 1 N
 # instructions = gets()  # MLMLMLML
@@ -66,3 +76,6 @@ end
   #   end
   #   return @x
   # end
+
+
+#create a bin, no rb after word_sorter

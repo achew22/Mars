@@ -8,7 +8,7 @@ describe Rover do
       Grid.new(5, 5)
     end
 
-    xit "sets the rover's initial position" do 
+    it "sets the rover's initial position" do 
       rover = Rover.new(0, 0, 'N')
       expect(rover.position).to eq [0, 0]
     end
@@ -28,7 +28,7 @@ describe Rover do
 
     context "when instructions are given to move outside the grid" do
 
-      it "returns the rover's final position" do 
+      xit "returns the rover's final position" do 
         rover.evaluate('LM')
         expect(rover.position).to eq [0, 0]
       end
