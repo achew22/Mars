@@ -8,6 +8,8 @@ class Runner
 
   def run
 
+    raise ArgumentError, "Please pass in a valid file" if filename == nil
+
     instructions = Instructions.create_from(filename)
 
     @grid = Grid.new(*instructions.grid_dimensions)
