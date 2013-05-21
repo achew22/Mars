@@ -1,4 +1,4 @@
-require 'rover/rover'
-require 'rover/grid'
-require 'rover/runner'
-require 'rover/instructions'
+require 'mars/rover'
+require 'mars/grid'
+require 'mars/runner'
+require 'mars/instructions'

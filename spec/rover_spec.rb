@@ -20,7 +20,8 @@ describe Rover do
 
     context "when instructions are given to move outside the grid" do
 
-      xit "returns the rover's final position" do 
+      it "returns the rover's final position" do 
+        pending "need to add a check so it doesn't move outside grid"
         rover.evaluate(['L', 'M'])
         expect(rover.position).to eq [0, 0]
       end
