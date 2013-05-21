@@ -8,8 +8,7 @@ class Runner
 
   def run
 
-    raise StandardError, "Please pass in a valid file" if filename == nil
-
+    raise StandardError, "Please pass in a valid file" unless filename
     instructions = Instructions.create_from(filename)
 
     @grid = Grid.new(*instructions.grid_dimensions)

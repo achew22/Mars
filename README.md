@@ -7,7 +7,7 @@ Description of the Application:
 
   Inputs to the application include:
     - Plateau size, which is represented by a grid. 
-    - Initial positions of the two rovers on the plateau. Positions include an x-position, y-position, and cardinal direction that the rover is facing. 
+    - Initial positions of the two rovers on the plateau. Positions include an x-coordinate, y-coordinate, and cardinal direction that the rover is facing. 
     - Instructions for movement across the plateau. Instructions are either "L" (turn left 90 degrees), "R", (turn right 90 degrees), or "M", (move forward one position). 
 
   The application takes the above inputs and calculates the resulting position of the two Mars rovers. 
@@ -17,9 +17,9 @@ Description of the Application:
   The application uses Rake and RSpec for testing purposes.
 
 
-Assumptions of the code: 
+Assumptions of the application: 
 
-  The code currently assumes the following: 
+  The application currently assumes the following: 
     - Exactly two Mars rovers will explore the plateau. 
     - Rovers will always have a starting position on the plateau. 
     - Rovers will not be given instructions to move off the plateau.

@@ -2,44 +2,22 @@ require 'spec_helper'
 
 describe Runner do 
 
-  let(:runner) {Runner.new("filename")}
+  let(:runner) {Runner.new(["filename"])}
   let!(:instructions) {Instructions.new(["5 5", "1 2 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM"])}
 
-  describe ".run" do
+  describe "#initialize" do 
 
-    before(:each) do 
-      Runner.any_instance.stub(:report_position)
+    it "takes in a new file" do 
+      expect(runner.argv).to eq ["filename"]
     end
+  end
+
+  describe ".run" do
 
     context "when a file with valid instructions is passed in" do 
 
       before do 
-        runner.stub(:filename).and_return ""
         Instructions.stub(:create_from).and_return(instructions)
-      end
-
-      it "creates a new grid" do 
-        (Grid).should_receive(:new).with(*instructions.grid_dimensions)    
-        runner.run
-      end
-
-      context "creating new rovers" do 
-
-        before(:each)  do 
-          runner.stub(:report_position)
-          Rover.any_instance.stub(:evaluate)
-        end
-
-        it "creates two rovers" do 
-          pending "stub not working"
-          (Rover).should_receive(:new).twice
-          runner.run
-        end
-
-        it "sends rovers instructions to move" do
-          instructions.should_receive(:rover_1_instructions)
-          runner.run
-        end
       end
 
       it "returns the result of each rovers' starting and ending position" do 
@@ -50,8 +28,13 @@ describe Runner do
 
     context "when a file without instructions is passed in" do 
 
+      # before(:each) do 
+      #   Runner.any_instance.stub(:report_position)
+      # end
+
       it "raises an exception" do
-        expect { raise StandardError }.to raise_error
+        runner = Runner.new([])
+        expect { runner.run }.to raise_error(StandardError)
       end
     end 
   end

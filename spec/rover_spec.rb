@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Rover do 
 
-  describe ".initialize" do 
+  describe "#initialize" do 
 
     it "sets the rover's initial position" do 
       rover = Rover.new(0, 0, 'N')
