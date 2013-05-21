@@ -4,10 +4,6 @@ describe Rover do
 
   describe ".initialize" do 
 
-    before do 
-      Grid.new(5, 5)
-    end
-
     it "sets the rover's initial position" do 
       rover = Rover.new(0, 0, 'N')
       expect(rover.position).to eq [0, 0]
@@ -40,8 +36,7 @@ describe Rover do
       end
 
       it "returns the rover's final position" do 
-        rover.x = 1
-        rover.y = 2
+        rover.x, rover.y = 1, 2
         rover.evaluate(['L', 'M', 'L', 'M', 'L', 'M', 'L', 'M', 'M'])
         expect(rover.position).to eq [1, 3]
         expect(rover.direction).to eq 'N'

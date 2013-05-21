@@ -32,7 +32,7 @@ describe Runner do
 
         it "creates two rovers" do 
           pending "stub not working"
-          (Rover).should_receive(:new)
+          (Rover).should_receive(:new).twice
           runner.run
         end
 
