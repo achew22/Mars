@@ -4,16 +4,19 @@ describe Runner do
 
   let(:runner) {Runner.new("filename")}
   let!(:instructions) {Instructions.new(["5 5", "1 2 N", "LMLMLMLMM", "3 3 E", "MMRMMRMRRM"])}
-  let(:rover) { Rover.new(1, 2, 'N')}
 
   describe ".run" do
 
-    before do 
-      runner.stub(:filename)
-      Instructions.stub(:create_from).and_return(instructions)
+    before(:each) do 
+      Runner.any_instance.stub(:report_position)
     end
 
     context "when a file with valid instructions is passed in" do 
+
+      before do 
+        runner.stub(:filename).and_return ""
+        Instructions.stub(:create_from).and_return(instructions)
+      end
 
       it "creates a new grid" do 
         (Grid).should_receive(:new).with(*instructions.grid_dimensions)    
@@ -48,8 +51,7 @@ describe Runner do
     context "when a file without instructions is passed in" do 
 
       it "raises an exception" do
-        pending "how to test that it raises an exception"
-        expect(Runner.new("")).to have(1).errors_on :argv
+        expect { raise StandardError }.to raise_error
       end
     end 
   end
