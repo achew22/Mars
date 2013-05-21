@@ -12,10 +12,12 @@ class Runner
 
     @grid = Grid.new(*instructions.grid_dimensions)
 
-    @rover1 = Rover.new(instructions.rover_1_position)
-    @rover2 = Rover.new(instructions.rover_2_position)
+    @rover1 = Rover.new(*instructions.rover_1_position)
+    @rover2 = Rover.new(*instructions.rover_2_position)
 
     report_position("Initial")
+
+    puts instructions.rover_1_instructions.inspect
 
     @rover1.evaluate(instructions.rover_1_instructions)
     @rover2.evaluate(instructions.rover_2_instructions)

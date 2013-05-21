@@ -1,10 +1,10 @@
 class Rover
   attr_accessor :x, :y, :direction
 
-  def initialize(vector)
-    @x = vector.x
-    @y = vector.y
-    @direction = vector.direction
+  def initialize(x, y, direction)
+    @x = x
+    @y = y
+    @direction = direction
   end
 
   def position
@@ -41,7 +41,7 @@ class Rover
 
   def turn_left
     index = compass_points.index(direction)
-    direction = compass_points[index - 1]
+    self.direction = compass_points[index - 1]
   end
 
   def turn_right

@@ -23,17 +23,17 @@ class Instructions
   end
 
   def rover_1_instructions
-    text[2].split(" ")
+    text[2].split("")
   end
 
   def rover_2_instructions
-    text[4].split(" ")
+    text[4].split("")
   end
 
   private 
 
   def position(s)
     x, y, direction = s.split(" ")
-    Position.new(x.to_i, y.to_i, direction)
+    [x.to_i, y.to_i, direction]
   end
 end 
