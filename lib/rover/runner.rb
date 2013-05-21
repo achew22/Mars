@@ -17,8 +17,6 @@ class Runner
 
     report_position("Initial")
 
-    puts instructions.rover_1_instructions.inspect
-
     @rover1.evaluate(instructions.rover_1_instructions)
     @rover2.evaluate(instructions.rover_2_instructions)
 

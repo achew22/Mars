@@ -1,6 +1,7 @@
 class Instructions
 
   def self.create_from(filename)
+    puts filename
     new(File.read(filename).split("\n"))
   end
 
