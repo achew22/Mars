@@ -16,7 +16,7 @@ describe Rover do
 
     context "when valid instructions are given" do 
 
-      it "returns the rover's final position" do 
+      it "returns the rover's final position without turning" do 
         rover.evaluate(['M', 'M'])
         expect(rover.position).to eq [0, 2]
       end
@@ -26,7 +26,7 @@ describe Rover do
         expect(rover.position).to eq [1, 0]
       end
 
-      it "returns the rover's final position" do 
+      it "returns the rover's final position when starting from a different starting point" do 
         rover.x, rover.y = 1, 2
         rover.evaluate(['L', 'M', 'L', 'M', 'L', 'M', 'L', 'M', 'M'])
         expect(rover.position).to eq [1, 3]
@@ -34,7 +34,7 @@ describe Rover do
       end
 
       it "returns the rover's position when starting from another direction" do 
-        rover = Rover.new(3, 3, 'E')
+        rover.x, rover.y, rover.direction = 3, 3, 'E'
         rover.evaluate(['M', 'M', 'R', 'M', 'M', 'R', 'M', 'R', 'R', 'M'])
         expect(rover.position).to eq [5, 1]
         expect(rover.direction).to eq 'E'

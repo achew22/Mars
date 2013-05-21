@@ -34,7 +34,6 @@ Instructions to run this application:
 
   To run the application: 
     - Run './bin/parse instructions.txt' to run the application. 
-      - './bin/parse' starts the application, and 'instructions.txt' is a file that is passed in to be evaluated and executed by the program. 
 
   To run tests:
     - Run 'rspec' to run all tests.

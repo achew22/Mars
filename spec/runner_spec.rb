@@ -28,10 +28,6 @@ describe Runner do
 
     context "when a file without instructions is passed in" do 
 
-      # before(:each) do 
-      #   Runner.any_instance.stub(:report_position)
-      # end
-
       it "raises an exception" do
         runner = Runner.new([])
         expect { runner.run }.to raise_error(StandardError)
