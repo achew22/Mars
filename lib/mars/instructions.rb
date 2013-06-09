@@ -1,3 +1,5 @@
+require 'Matrix'
+
 class Instructions
 
   def self.create_from(filename)
@@ -30,10 +32,19 @@ class Instructions
     text[4].split("")
   end
 
-  private 
+  private
+
+  def dir_to_vector(direction)
+    {
+      'N' => Vector[ 0, 1],
+      'E' => Vector[ 1, 0],
+      'S' => Vector[ 0,-1],
+      'W' => Vector[-1, 0],
+    }[direction]
+  end
 
   def position(s)
     x, y, direction = s.split(" ")
-    [x.to_i, y.to_i, direction]
+    return Vector[x.to_i, y.to_i], dir_to_vector(direction)
   end
-end 
+end
